@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>Detail Proyek: Game Shooter Sederhana C++ - Rizky Ananda Ramadhan</title>
+    
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+
+      /* Kelas untuk transisi opacity pada gambar */
+      #slider-image {
+        transition: opacity 0.4s ease-in-out;
+      }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html#home" class="text-2xl font-bold text-gray-800 hover:text-indigo-600">
+                Rizky<span class="text-indigo-600">AR</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#home" class="text-gray-700 hover:text-indigo-600 font-medium">Beranda</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 font-medium">Tentang</a>
+                <a href="index.html#skills" class="text-gray-700 hover:text-indigo-600 font-medium">Keahlian</a>
+                <a href="index.html#projects" class="font-bold text-indigo-600">Proyek</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-indigo-600 font-medium">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 pt-28 pb-16">
+        <div class="mb-8">
+            <a href="index.html#projects" class="text-indigo-600 hover:underline font-medium">&larr; Kembali ke Semua Proyek</a>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 md:mb-12 text-center">Game Shooter Sederhana C++</h1>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            <div class="relative group">
+                <img id="slider-image" src="https://images.unsplash.com/photo-1585078044563-3e47796d1363?w=800&h=600&fit=crop" alt="Foto Proyek Game C++" class="rounded-lg shadow-lg w-full h-auto object-cover aspect-video transition-transform duration-300">
+                
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-between">
+                    <button id="prev-btn" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-3 bg-white/80 text-gray-800 p-2 rounded-full shadow-md hover:bg-white">&larr;</button>
+                    <button id="next-btn" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-3 bg-white/80 text-gray-800 p-2 rounded-full shadow-md hover:bg-white">&rarr;</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col h-full">
+                <h2 class="text-2xl font-bold text-gray-800 mb-3">Deskripsi Proyek</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Ini adalah game shooter sederhana yang berjalan di terminal/konsol, dibuat sepenuhnya menggunakan bahasa pemrograman C++. Proyek ini dibangun dengan menerapkan konsep-konsep utama dari Object-Oriented Programming (OOP).
+                    <br><br>
+                    Setiap entitas di dalam game, seperti `Player`, `Bullet`, dan `Enemy`, direpresentasikan sebagai *class* yang terpisah. Hal ini membuat kode lebih terstruktur, mudah dikelola, dan dapat dikembangkan lebih lanjut. Game ini mencakup logika dasar seperti pergerakan pemain, menembak, pergerakan musuh, deteksi tabrakan, dan sistem skor.
+                </p>
+                <div class="mt-auto pt-6">
+                    <a href="https://github.com/rzkydhann/Game-Space-Shooter-Bahasa-C.git" target="_blank" class="inline-block w-full md:w-auto text-center bg-indigo-600 text-white py-3 px-8 rounded-lg hover:bg-indigo-700 transition-colors font-semibold shadow-lg">
+                        Lihat Proyek di Github
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 text-sm">
+              &copy; 2025 Rizky Ananda Ramadhan. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- SCRIPT UNTUK IMAGE SLIDER ---
+        // GANTI path gambar ini dengan screenshot game Anda
+        const images = [
+            'image/game1.webp',
+            'image/game2.webp'
+        ];
+        
+        let currentImageIndex = 0;
+        const sliderImage = document.getElementById('slider-image');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        // Fungsi showImage yang dimodifikasi untuk animasi
+        function showImage(index) {
+            if (!images.length) return;
+
+            // 1. Jadikan gambar transparan (memulai fade-out)
+            sliderImage.style.opacity = 0;
+
+            // 2. Tunggu sebentar, lalu ganti sumber gambar dan buat kembali terlihat (memulai fade-in)
+            setTimeout(() => {
+                sliderImage.src = images[index];
+                sliderImage.style.opacity = 1;
+            }, 200); // Penundaan 200ms (0.2 detik)
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            showImage(currentImageIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        });
+
+        if (images.length > 0) { showImage(currentImageIndex); }
+        if (images.length <= 1) { prevBtn.style.display = 'none'; nextBtn.style.display = 'none'; }
+    </script>
+</body>
+</html>
