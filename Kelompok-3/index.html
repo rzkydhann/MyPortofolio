@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <title>Welcome to RockShoes.id</title>
+  </head>
+  <header>
+    <!-- Navbar Light Theme -->
+    <nav class="fixed top-0 left-0 w-full bg-white text-gray-900 shadow-md z-50">
+      <div class="container mx-auto flex flex-wrap items-center justify-between p-4">
+        <!-- Brand/logo -->
+        <a href="../index.html" class="text-black font-bold text-xl">Rockshoes.id</a>
+
+        <!-- Tombol toggle menu untuk versi mobile -->
+        <button id="menu-btn" class="block lg:hidden focus:outline-none">
+          <!-- ikon hamburger menu -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <!-- Menu navigasi, tersembunyi secara default di mobile (hidden), terlihat di desktop (lg:flex) -->
+        <div id="menu" class="hidden w-full lg:flex lg:w-auto lg:items-center">
+          <!-- Daftar menu utama -->
+          <ul class="flex flex-col lg:flex-row lg:space-x-6">
+            <li><a href="#home" class="block px-3 py-2 rounded hover:bg-yellow-100">Beranda</a></li>
+            <li><a href="#about" class="block px-3 py-2 rounded hover:bg-yellow-100">Tentang Kami</a></li>
+            <li><a href="#layanan" class="block px-3 py-2 rounded hover:bg-yellow-100">Layanan Kami</a></li>
+            <li><a href="admin/loginadmin.php" class="block px-4 py-2 hover:bg-yellow-100">Admin</a></li>
+            <li><a href="pelanggan/loginpelanggan.php" class="block px-4 py-2 hover:bg-yellow-100">Login</a></li>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <body id="home" class="bg-white text-gray-900">
+    <!-- jumbotron -->
+    <section 
+      class="relative min-h-screen flex flex-col justify-center items-center text-center bg-cover bg-center py-20 px-4 sm:px-8"
+      style="background-image: url('img/jumbotronn.jpg');">
+      <!-- overlay hitam transparan -->
+      <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+      <!-- konten teks di atas overlay -->
+      <div class="relative max-w-4xl text-white drop-shadow-lg">
+        <h1 class="text-9xl sm:text-9xl font-extrabold mb-1 tracking-wide leading-tight text-white drop-shadow-lg">RockShoes.id</h1>
+        <p class="text-lg sm:text-xl font-semibold mb-9 tracking-wide leading-relaxed text-gray-200">Cuci sepatu? Tinggal order aja, bisa diantar!</p>
+        <h2 class="text-2xl sm:text-2xl font-medium mb-2 tracking-wide leading-snug text-gray-300">LANGSUNG DI ROCKSHOES, LAUNDRY SEPATU NO 1 DI SURABAYA</h2>
+      </div>
+    </section>
+
+    <!-- about -->
+    <section class="about bg-white py-20" id="about">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-10">
+          <h2 class="text-4xl font-bold text-gray-800 font-montserrat">Tentang Kami</h2>
+          <div class="w-20 h-1 bg-yellow-400 mx-auto mt-4"></div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <!-- Icon atau Gambar -->
+          <div class="flex-shrink-0 md:w-1/2">
+            <img src="img/rockshoes.svg" alt="RockShoes Icon" class="w-100 mx-auto md:mx-50">
+          </div>
+          
+          <!-- Text -->
+          <div class="md:w-1/2 text-lg text-gray-700 font-montserrat leading-relaxed">
+            <p class="mb-4">
+              Punya sepatu bagus dan mahal tapi bingung cara merawatnya? <span class="font-semibold text-yellow-600">Kami punya solusinya!</span>
+            </p>
+            <p>
+              <span class="font-semibold">RockShoes</span> hadir untuk memberikan kemudahan dan kecepatan bagi kamu dalam menemukan laundry sepatu terpercaya di Surabaya. Tak perlu ribet, tinggal order – kami jemput dan antar kembali sepatumu dalam keadaan bersih dan segar!
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <!-- akhir about -->
+
+    <!-- layanan -->
+    <section class="layanan bg-yellow-100 py-16" id="layanan">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Layanan Kami</h2>
+          <p class="text-lg text-gray-600 max-w-xl mx-auto">
+            Kami menyediakan berbagai layanan perawatan dan perbaikan sepatu oleh teknisi profesional berpengalaman.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Card layanan -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img src="img/deepclean.jpg" alt="Cuci Sepatu Premium" class="w-full h-52 object-cover" />
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg">Deep Cleaning</h3>
+              <p class="text-sm text-gray-600 mt-2">Kembalikan warna asli sol sepatumu dengan teknik deep clean.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img src="img/hardclean.webp" alt="Pembersihan Sol & Midsole" class="w-full h-52 object-cover" />
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg">Hard Cleaning</h3>
+              <p class="text-sm text-gray-600 mt-2">Layanan cuci detail untuk sepatu sneakers & kulit.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img src="img/repaint.webp" alt="Repaint Sepatu" class="w-full h-52 object-cover" />
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg">Repaint</h3>
+              <p class="text-sm text-gray-600 mt-2">Warnai ulang sepatumu agar tampak baru kembali.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img src="img/reglue.webp" alt="Repair dan Jahit Ulang" class="w-full h-52 object-cover" />
+            <div class="p-4 text-center">
+              <h3 class="font-semibold text-lg">Reglue</h3>
+              <p class="text-sm text-gray-600 mt-2">Sol lepas? Kami siap bantu perbaiki seperti baru.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- akhir layanan -->
+
+    <section class="relative z-10 flex items-center justify-center min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl w-full mx-auto bg-white p-8 sm:p-12 lg:p-16 rounded-3xl shadow-custom transform-hover-scale text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6 tracking-tight">
+                Tidak sempat mengunjungi <span class="text-indigo-600">cabang terdekat</span> kami?
+            </h1>
+            <p class="mt-4 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Tenang, <strong class="font-semibold text-gray-800">Shoes and Care</strong> kini memiliki layanan antar jemput <span class="text-indigo-500 font-medium">eksklusif</span>! Silakan hubungi kami sekarang juga untuk kemudahan Anda.
+            </p>
+            <div class="mt-12">
+                <a href="pelanggan/loginpelanggan.php" class="inline-flex items-center justify-center px-10 py-5 border border-transparent text-lg font-bold rounded-full shadow-md text-gray-900 bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-yellow-500 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 group">
+                    Gunakan Layanan Sekarang
+                    <svg class="ml-3 h-6 w-6 text-gray-800 group-hover:text-gray-900 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- lokasi workshop -->
+    <section class="bg-yellow-100 py-16 px-4" id="lokasi">
+      <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 font-montserrat">Lokasi Workshop Kami</h2>
+        <p class="text-lg text-gray-700 mt-2">Kunjungi workshop terdekat untuk layanan langsung dari RockShoes!</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-black flex flex-col justify-between">
+          <span class="inline-block bg-gray-200 text-black px-3 py-1 rounded-full text-sm font-semibold mb-4">Surabaya</span>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">Ngagel Rejo Kidul No. 9A</h3>
+            <p class="text-sm text-gray-700 mt-1">Senin–Minggu | 10.00–19.00</p>
+          </div>
+          <div class="mt-6 space-y-2">
+            <a href="https://maps.app.goo.gl/18PFYjnadHJAwR5s5" target="_blank" class="block w-full bg-white text-black border border-black py-2 rounded-lg font-semibold text-center">Lihat Lokasi</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="block w-full bg-yellow-100 text-black border border-black py-2 rounded-lg font-semibold text-center">Hubungi via WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-black flex flex-col justify-between">
+          <span class="inline-block bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">Surabaya</span>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">Atlas Dharmawangsa</h3>
+            <p class="text-sm text-gray-700 mt-1">Senin–Minggu | 10.00–19.00</p>
+          </div>
+          <div class="mt-6 space-y-2">
+            <a href="https://maps.app.goo.gl/18PFYjnadHJAwR5s5" target="_blank" class="block w-full bg-white text-black border border-black py-2 rounded-lg font-semibold text-center">Lihat Lokasi</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="block w-full bg-yellow-100 text-black border border-black py-2 rounded-lg font-semibold text-center">Hubungi via WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-black flex flex-col justify-between">
+          <span class="inline-block bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">Surabaya</span>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">Kaliwaru I No. 17</h3>
+            <p class="text-sm text-gray-700 mt-1">Senin–Minggu | 10.00–19.00</p>
+          </div>
+          <div class="mt-6 space-y-2">
+            <a href="https://maps.app.goo.gl/18PFYjnadHJAwR5s5" target="_blank" class="block w-full bg-white text-black border border-black py-2 rounded-lg font-semibold text-center">Lihat Lokasi</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="block w-full bg-yellow-100 text-black border border-black py-2 rounded-lg font-semibold text-center">Hubungi via WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 border-2 border-black flex flex-col justify-between">
+          <span class="inline-block bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">Surabaya</span>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900">Siwalankerto No. 147</h3>
+            <p class="text-sm text-gray-700 mt-1">Senin–Minggu | 10.00–19.00</p>
+          </div>
+          <div class="mt-6 space-y-2">
+            <a href="https://maps.app.goo.gl/18PFYjnadHJAwR5s5" target="_blank" class="block w-full bg-white text-black border border-black py-2 rounded-lg font-semibold text-center">Lihat Lokasi</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="block w-full bg-yellow-100 text-black border border-black py-2 rounded-lg font-semibold text-center">Hubungi via WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+<!-- akhir lokasi workshop -->
+
+
+    <!-- footer -->
+    <footer class="bg-white text-gray-800 py-10 border-t border-gray-200">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6">
+          
+          <!-- Tentang RockShoes -->
+          <div>
+            <h3 class="text-xl font-bold mb-3 font-montserrat">RockShoes</h3>
+            <p class="text-gray-600">RockShoes merupakan aplikasi yang menyediakan jasa cuci dan perbaikan sepatu secara profesional dan cepat. Solusi terbaik untuk sepatu kesayanganmu!</p>
+          </div>
+          
+          <!-- Kontak -->
+          <div>
+            <h3 class="text-xl font-bold mb-3 font-montserrat">Kontak Kami</h3>
+            <ul class="text-gray-600 space-y-2">
+              <li><span class="font-semibold">Instagram:</span> @rockshoes.id</li>
+              <li><span class="font-semibold">Twitter:</span> @rockshoes</li>
+              <li><span class="font-semibold">Email:</span> support@rockshoes.id</li>
+            </ul>
+          </div>
+          
+          <!-- Navigasi Tambahan (opsional) -->
+          <div>
+            <h3 class="text-xl font-bold mb-3 font-montserrat">Menu</h3>
+            <ul class="text-gray-600 space-y-2">
+              <li><a href="#home" class="hover:underline">Beranda</a></li>
+              <li><a href="#layanan" class="hover:underline">Layanan</a></li>
+              <li><a href="#about" class="hover:underline">Tentang Kami</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t pt-4 text-center text-gray-500 text-sm">
+          &copy; 2025 RockShoes.id - All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- akhir footer -->
+
+    <script>
+      // Toggle menu mobile saat tombol hamburger di klik
+      document.getElementById("menu-btn").addEventListener("click", function () {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
