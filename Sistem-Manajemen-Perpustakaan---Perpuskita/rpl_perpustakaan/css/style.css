@@ -1,0 +1,298 @@
+/* style.css */
+
+/* --- Font Kustom: Lemon --- */
+@font-face {
+    font-family: 'Lemon';
+    /* Pastikan path ini benar relatif terhadap file CSS Anda */
+    src: url('../css/fonts/Lemon-Regular.woff2') format('woff2'),
+         url('../css/fonts/Lemon-Regular.woff') format('woff'),
+         url('../css/fonts/Lemon-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --- Variabel Warna --- */
+:root {
+    --main-bg-color: #28a745; /* Hijau yang lebih cerah untuk header & tombol utama */
+    --primary-text-color: #28a745; /* Warna hijau utama untuk teks/ikon */
+    --secondary-bg-color: #e0ffe0; /* Hijau muda untuk latar ikon di dashboard */
+    --sidebar-bg-color: #ffffff;
+    --sidebar-text-color: #333;
+    --active-link-bg: #d4edda; /* Hijau muda sedikit gelap untuk link aktif sidebar */
+}
+
+/* --- General Body & Wrapper Styling --- */
+body {
+    overflow-x: hidden;
+    background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+}
+
+#wrapper {
+    display: flex;
+}
+
+/* --- Sidebar Styling --- */
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem; /* Default, sidebar tersembunyi */
+    transition: margin 0.25s ease-out; /* Animasi saat sidebar muncul/sembunyi */
+    background-color: var(--sidebar-bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    width: 15rem; /* Lebar sidebar */
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 1.5rem 1rem;
+    color: var(--primary-text-color);
+    border-bottom: 1px solid #eee; /* Garis bawah */
+    display: flex; /* Menggunakan flexbox untuk logo dan teks */
+    align-items: center; /* Pusatkan vertikal */
+    justify-content: center; /* Pusatkan horizontal */
+    gap: 10px; /* Jarak antara item flex */
+}
+
+#sidebar-wrapper .sidebar-heading img {
+    max-height: 40px; /* Tinggi maksimum logo */
+    width: auto;
+    object-fit: contain; /* Memastikan gambar pas tanpa terdistorsi */
+}
+
+.brand-text {
+    font-family: 'Lemon', cursive; /* Menggunakan font Lemon, fallback ke cursive */
+    font-size: 1.8rem; /* Ukuran font untuk teks "Perpuskita" */
+    color: var(--primary-text-color); /* Warna teks */
+    white-space: nowrap; /* Mencegah teks patah baris */
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem; /* Memastikan lebar list group sesuai sidebar */
+}
+
+.profile-info {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-info img {
+    border: 2px solid var(--primary-text-color); /* Border warna primer untuk gambar profil */
+}
+
+.list-group-item {
+    border: none;
+    padding: 15px 20px;
+    color: var(--sidebar-text-color);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.list-group-item.active {
+    background-color: var(--active-link-bg) !important;
+    color: var(--primary-text-color) !important;
+    font-weight: bold;
+}
+
+/* --- Page Content Wrapper --- */
+#page-content-wrapper {
+    min-width: 100vw; /* Mengisi sisa lebar */
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    background-color: var(--main-bg-color) !important; /* Warna hijau untuk navbar */
+    color: white;
+    border-bottom-left-radius: 10px; /* Sudut melengkung di kiri bawah navbar */
+    border-bottom-right-radius: 10px; /* Sudut melengkung di kanan bawah navbar */
+}
+
+.navbar .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.navbar .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.navbar .fas.fa-align-left {
+    color: white; /* Warna ikon hamburger di navbar */
+}
+
+.navbar h2 {
+    color: white; /* Warna teks judul halaman di navbar */
+}
+
+/* --- Dashboard Summary Cards --- */
+.card {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.p-3.bg-white.shadow-sm.d-flex.justify-content-around.align-items-center.rounded i {
+    font-size: 2.5rem; /* Ukuran ikon di kartu ringkasan dashboard */
+    padding: 15px; /* Padding sekitar ikon */
+    border-radius: 50%; /* Membuat ikon lingkaran */
+    background-color: var(--secondary-bg-color); /* Latar belakang ikon */
+    color: var(--primary-text-color); /* Warna ikon */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Bayangan ringan untuk ikon */
+}
+
+/* --- Activity Feed Cards --- */
+.activity-card .activity-icon {
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+}
+
+/* --- Table Styling (Umum) --- */
+/* Pastikan tabel dibungkus dengan <div class="table-responsive"> di HTML */
+.table-responsive {
+    overflow-x: auto; /* Memungkinkan scroll horizontal jika konten melebihi lebar */
+}
+
+/* Atur semua sel tabel agar teks tidak patah baris secara default */
+.table th,
+.table td {
+    white-space: nowrap; /* Mencegah teks patah baris */
+    vertical-align: middle; /* Pastikan teks vertikal rata tengah */
+}
+
+/* Header tabel (semua th di thead) - tetap hijau */
+.table th {
+    background-color: var(--main-bg-color); /* Kembali ke hijau utama */
+    color: white; /* Teks putih */
+}
+
+/* ATURAN UNTUK KOLOM 'No' PADA BARIS DATA SAJA */
+/* Kolom ini sekarang ditargetkan dengan class='table-no-column' di PHP */
+.table-no-column {
+    background-color: #ffffff !important; /* Paksa menjadi putih */
+    color: #333 !important; /* Paksa teks gelap */
+    text-align: center; /* Pusatkan teks */
+    width: 60px; /* Atur lebar */
+    min-width: 40px;
+}
+
+
+/* style.css */
+
+/* ... (kode CSS di atasnya) ... */
+
+/* Penyesuaian lebar kolom 'No' (kolom ke-1) */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+    width: 60px;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Penyesuaian lebar kolom 'ID Anggota' / 'ID Buku' (kolom ke-2) */
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    width: 100px;
+    min-width: 80px;
+}
+
+/* --- ATURAN BARU/MODIFIKASI UNTUK KOLOM 'Nama' (kolom ke-3) --- */
+.table th:nth-child(3),
+.table td:nth-child(3) {
+    width: 180px; /* Contoh lebar untuk Nama, sesuaikan */
+    min-width: 120px;
+    overflow: hidden; /* Tambahkan ini */
+    text-overflow: ellipsis; /* Tambahkan ini */
+}
+
+/* --- ATURAN BARU/MODIFIKASI UNTUK KOLOM 'Alamat' (kolom ke-4) --- */
+.table th:nth-child(4),
+.table td:nth-child(4) {
+    width: 250px; /* Contoh lebar untuk Alamat, bisa dikurangi jika terlalu jauh */
+    min-width: 180px; /* Minimal untuk menampung sebagian alamat */
+    overflow: hidden; /* Sembunyikan jika melebihi lebar */
+    text-overflow: ellipsis; /* Tambahkan elipsis (...) jika teks tersembunyi */
+}
+
+/* Penyesuaian lebar kolom 'No Telp' (kolom ke-5 di Data Anggota/Peminjaman) */
+.table th:nth-child(5),
+.table td:nth-child(5) {
+    width: 150px;
+    min-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Penyesuaian lebar kolom 'Action' (kolom terakhir) */
+.table th:last-child,
+.table td:last-child {
+    width: 150px;
+    min-width: 100px;
+}
+
+/* ... (sisa CSS di bawahnya) ... */
+
+/* --- Status Badges --- */
+.status-badge {
+    padding: .35em .65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+.status-tersedia {
+    background-color: #28a745; /* green */
+}
+
+.status-dipinjam {
+    background-color: #ffc107; /* yellow */
+    color: #333; /* Warna teks gelap untuk latar kuning */
+}
+
+.status-dikembalikan {
+    background-color: #28a745; /* green */
+    color: white;
+}
+
+.status-terlambat {
+    background-color: #dc3545; /* red */
+    color: white;
+}
+
+.status-tidak-tersedia {
+    background-color: #dc3545; /* red */
+}
+
+.status-aktif {
+    background-color: #28a745;
+}
+
+.status-non-aktif {
+    background-color: #dc3545;
+}
+
+.status-suspend {
+    background-color: #ffc107;
+    color: #333; /* Warna teks gelap untuk latar kuning */
+}
+
+/* --- Media Queries (Responsiveness) --- */
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0; /* Sidebar terlihat pada layar besar */
+    }
+
+    #page-content-wrapper {
+        min-width: 0; /* Mengatur ulang min-width */
+        width: 100%; /* Mengisi sisa lebar */
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem; /* Menyembunyikan sidebar saat toggle pada layar besar */
+    }
+}
